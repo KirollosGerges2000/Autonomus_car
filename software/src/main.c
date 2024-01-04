@@ -29,12 +29,13 @@ SOFTWARE.
 
 /* Includes */
 #include "stm32f4xx.h"
+#include "motors.h"
 
 /* Private macro */
 /* Private variables */
 /* Private function prototypes */
 /* Private functions */
-
+void Delay(__IO uint32_t nCount);
 /**
 **===========================================================================
 **
@@ -44,7 +45,7 @@ SOFTWARE.
 */
 int main(void)
 {
-  int i = 0;
+
 
   /**
   *  IMPORTANT NOTE!
@@ -57,10 +58,19 @@ int main(void)
   */
 
   /* TODO - Add your application code here */
+	init_motors();
 
   /* Infinite loop */
   while (1)
   {
-	i++;
+	
+
   }
+  return 0;
+}
+
+
+void Delay(__IO uint32_t nCount)
+{
+    while (nCount--);
 }
