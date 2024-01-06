@@ -31,7 +31,8 @@ SOFTWARE.
 #include "stm32f4xx.h"
 #include "motors.h"
 #include "US_sensor.h"
-
+#include "lcd.h"
+float ADCdata=0;
 /* Private macro */
 /* Private variables */
 /* Private function prototypes */
@@ -65,9 +66,12 @@ ADC_init();
   /* Infinite loop */
   while (1)
   {
-	
 
-
+	ADCdata=ADC_read();
+	LCD_Init();
+	LCD_String_xy (0,6,"AMIT");
+	lcd_command(0xC0);
+	LCD_String_xy(1,4,"Nasr  53");
 
 
 

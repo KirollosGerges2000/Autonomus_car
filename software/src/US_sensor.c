@@ -26,7 +26,7 @@ void ADC_conversion(void)
 	
 }
 
-int ADC_read(void)
+float ADC_read(void)
 {
 	ADC_conversion();
 	while(!(ADC1->SR & (1<<1))) {} // wait for conversion to be complete
