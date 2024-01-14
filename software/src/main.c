@@ -61,19 +61,19 @@ int main(void)
   */
 
   /* TODO - Add your application code here */
-	init_motors();
+	//init_motors();
 ADC_init();
-
+SERVO_INIT();
   /* Infinite loop */
   while (1)
   {
 
 	ADCdata=ADC_read();
-	LCD_Init();
+LCD_Init();
 	LCD_String_xy (0,6,"AMIT");
 	lcd_command(0xC0);
 	LCD_String_xy(1,4,"Nasr  53");
-SERVO(200);
+SERVO(0,10);
 
 
 

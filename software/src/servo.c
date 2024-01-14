@@ -9,8 +9,8 @@ Author:Kirollos Gerges
 void GPIO_init(void)
 {
     RCC->AHB1ENR |= 1; //Enable GPIOA clock
-    GPIOA->AFR[0] |= 0x00100000; // Select the PA5 pin in alternate function mode
-    GPIOA->MODER |= 0x00000800; //Set the PA5 pin alternate function
+    GPIOB->AFR[0] |= 0x01000000;// Select the PA5 pin in alternate function mode
+    GPIOB->MODER |= 0x00000800; //Set the PA5 pin alternate function
 }
 
 void TIM2_init(void)
@@ -36,24 +36,27 @@ void TIM4_ms_Delay(int delay)
     TIM4->SR &= ~(0x0001); //Reset the update interrupt flag
 }
 
-void SERVO (int pwm)
+void SERVO_INIT(void)
 {
-      RCC->CFGR |= 0<<10; // set APB1 = 16 MHz
+	RCC->CFGR |= 0<<10; // set APB1 = 16 MHz
     GPIO_init();
     TIM2_init();
     TIM2->CR1 |= 1;
 
+}
+
+void SERVO (int pwm ,int delay)
+{
+
 
         
-             TIM2->CCR1=2500;
-            TIM4_ms_Delay(pwm);
-            TIM2->CCR1=50;
-                     TIM4_ms_Delay(pwm);
+             TIM2->CCR1=20000;
+            TIM4_ms_Delay(delay);
+            TIM2->CCR1=pwm;
+                     TIM4_ms_Delay(delay);
         
     
 } 
-
-
 
 
 

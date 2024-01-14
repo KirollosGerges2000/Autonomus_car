@@ -8,8 +8,8 @@ Author:Kirollos Gerges
 void GPIO_init(void);
 void TIM2_init(void);
 void TIM4_ms_Delay(int delay);
-void SERVO (int pwm);
-
+void SERVO_INIT(void);
+void SERVO (int pwm ,int delay);
 
 
 
