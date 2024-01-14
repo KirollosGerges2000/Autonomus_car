@@ -32,6 +32,7 @@ SOFTWARE.
 #include "motors.h"
 #include "US_sensor.h"
 #include "lcd.h"
+#include "servo.h"
 float ADCdata=0;
 /* Private macro */
 /* Private variables */
@@ -72,7 +73,7 @@ ADC_init();
 	LCD_String_xy (0,6,"AMIT");
 	lcd_command(0xC0);
 	LCD_String_xy(1,4,"Nasr  53");
-
+SERVO(200);
 
 
 
