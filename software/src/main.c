@@ -61,9 +61,13 @@ int main(void)
   */
 
   /* TODO - Add your application code here */
-	//init_motors();
+	init_motors();
 ADC_init();
 SERVO_INIT();
+
+//SERVO(0,20); // FOR 0 DEGREE
+//SERVO(20,0); // FOR -90 DEGREE
+// FOR 90 DEGREE no declaration for servo function
   /* Infinite loop */
   while (1)
   {
@@ -73,8 +77,10 @@ LCD_Init();
 	LCD_String_xy (0,6,"AMIT");
 	lcd_command(0xC0);
 	LCD_String_xy(1,4,"Nasr  53");
-SERVO(0,10);
 
+
+forward();
+SERVO(20,0);
 
 
 

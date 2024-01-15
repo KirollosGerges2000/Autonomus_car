@@ -17,11 +17,11 @@ void init_motors (void)
 
 
 
-    RCC->AHB1ENR |= 1; //Enable GPIOA clock
+  /*  RCC->AHB1ENR |= 1; //Enable GPIOA clock
        GPIOA->AFR[0] |= 0x00100000; // Select the PA5 pin in alternate function mode
        GPIOA->MODER |= 0x00000800; //Set the PA5 pin alternate function
         RCC->CFGR |= 0<<10; // set APB1 = 16 MHz
-
+*/
 //config the outputs pins
 	 GPIO_InitTypeDef GPIO_InitDef_E;
 	     GPIO_InitDef_E.GPIO_Pin = GPIO_Pin_All;
@@ -38,8 +38,8 @@ void init_motors (void)
            GPIO_ResetBits(GPIOE,GPIO_Pin_4);
             GPIO_ResetBits(GPIOE,GPIO_Pin_5);
 
-            TIM2_Init();
-            TIM2->CR1 |= 1;
+            //TIM2_Init();
+            //TIM2->CR1 |= 1;
 }
 
 
