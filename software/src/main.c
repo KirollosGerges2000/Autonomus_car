@@ -72,15 +72,17 @@ SERVO_INIT();
   while (1)
   {
 
-	ADCdata=ADC_read();
+	ADCdata=(int)ADC_read();
 LCD_Init();
 	LCD_String_xy (0,6,"AMIT");
 	lcd_command(0xC0);
 	LCD_String_xy(1,4,"Nasr  53");
 
 
-forward();
-SERVO(20,0);
+	forward();
+
+
+
 
 
 
