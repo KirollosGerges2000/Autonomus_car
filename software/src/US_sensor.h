@@ -8,7 +8,7 @@ Author:Kirollos Gerges
 
 void ADC_init(void);
 void ADC_conversion(void);
-float ADC_read(void);
+unsigned short ADC_read(void);
 
 
 #endif

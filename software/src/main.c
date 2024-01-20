@@ -33,7 +33,7 @@ SOFTWARE.
 #include "US_sensor.h"
 #include "lcd.h"
 #include "servo.h"
-float ADCdata=0;
+float ADCdata=0.00;
 /* Private macro */
 /* Private variables */
 /* Private function prototypes */
@@ -64,6 +64,7 @@ int main(void)
 	init_motors();
 ADC_init();
 SERVO_INIT();
+LCD_Init();
 
 //SERVO(0,20); // FOR 0 DEGREE
 //SERVO(20,0); // FOR -90 DEGREE
@@ -72,14 +73,18 @@ SERVO_INIT();
   while (1)
   {
 
-	ADCdata=(int)ADC_read();
-LCD_Init();
-	LCD_String_xy (0,6,"AMIT");
+	ADCdata=(int)(ADC_read());
+
+
+	lcd_into_string(ADCdata);
 	lcd_command(0xC0);
-	LCD_String_xy(1,4,"Nasr  53");
+	LCD_String("Kirollos Gerges ");
 
-
+if(ADCdata>=10)
+{
 	forward();
+}
+
 
 
 
