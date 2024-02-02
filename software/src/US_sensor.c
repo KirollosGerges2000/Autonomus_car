@@ -26,7 +26,7 @@ void ADC_conversion(void)
 	
 }
 
-unsigned short ADC_read(void)
+float ADC_read(void)
 {
 	ADC_conversion();
 
