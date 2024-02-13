@@ -33,6 +33,7 @@ SOFTWARE.
 #include "US_sensor.h"
 #include "lcd.h"
 #include "servo.h"
+#include "ADC.h"
 float ADCdata=0;
 /* Private macro */
 /* Private variables */
@@ -61,10 +62,11 @@ int main(void)
   */
 
   /* TODO - Add your application code here */
-	//init_motors();
+	init_motors();
 ADC_init();
 //SERVO_INIT();
 LCD_Init();
+//init_ADC();
 
 //SERVO(0,20); // FOR 0 DEGREE
 //SERVO(20,0); // FOR -90 DEGREE
@@ -73,8 +75,10 @@ LCD_Init();
   while (1)
   {
 
-	ADCdata=(float)(ADC_read());
 
+uint16_t foo = GPIOA->IDR & 0xFF;
+
+ADCdata=foo;
 
 	lcd_into_string(ADCdata);
 	lcd_command(0xC0);
@@ -84,9 +88,6 @@ if(ADCdata>=10)
 {
 	forward();
 }
-
-
-
 
 
 

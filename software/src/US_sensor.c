@@ -16,14 +16,14 @@ void ADC_init(void)
 	ADC1->CR2 &= ~(1<<0);  //  ADC disable
 	ADC1->SQR3 |= 0; // Enable ADC 0th Channel
 	ADC1->CR2 |=  (1<<0);  // ADC ON
-	
+
 }
 
 //ADC conversion
 void ADC_conversion(void)
 {
 	ADC1->CR2 |= (1<<30); // Start  ADC conversion
-	
+
 }
 
 float ADC_read(void)
@@ -35,7 +35,7 @@ float ADC_read(void)
 		// wait for conversion to be complete
 	}
 		return (ADC1-> DR);
-		
+
 }
 
 
