@@ -49,9 +49,7 @@ float ADCdata=0;
 */
 int main(void)
 {
-
-
-  /**
+ /**
   *  IMPORTANT NOTE!
   *  The symbol VECT_TAB_SRAM needs to be defined when building the project
   *  if code has been located to RAM and interrupts are used. 
@@ -82,12 +80,10 @@ ADCdata=foo;
 
 	lcd_into_string(ADCdata);
 	lcd_command(0xC0);
-	LCD_String("Kirollos Gerges ");
+	LCD_String("Auto car ");
 
-if(ADCdata>=10)
-{
+
 	forward();
-}
 
 
 
